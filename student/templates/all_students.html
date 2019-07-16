@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 
+<div class="container"> -->
+  <h2>Student List</h2>
+  <button><a href=""/student/add/"></a></button>        
+  <table class="table table-striped">
+    <thead>
+<tr>
+<th class="bg-primary">First Name</th>
+<th class="bg-primary">Last Name</th>
+<th class="bg-primary">Gender</th>
+<th class="bg-primary">Email</th>
+<th class="bg-primary">Details</th>
+<th class="bg-primary">Edit</th>
+</tr>
+
+{% for student in students %}
+<tr>
+<td class="bg-danger">{{student.first_name}}</td>
+<td class="bg-danger">{{student.last_name}}</td>
+<td class="bg-success">{{student.gender}}</td>
+<td class="bg-success">{{student.email}}</td>
+<td class="bg-warning">
+  <a href="/student/view/{{student.pk}}/">view more</a>
+</td>
+<td class="bg-warning">
+  <a href="/student/edit/{{student.pk}}/">Edit</a>
+</td>
+
+
+
+{% endfor %}
+</table>
+
+
+
+</body>
+</html>

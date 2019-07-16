@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- <div class="container"> -->
+  <h2>Course LIST</h2>  
+  <button><a href="/course/add/"></a></button>      
+  <table class="table table-striped">
+    <thead>
+<tr>
+<th class="bg-primary">Name</th>
+<th class="bg-primary">Duration in month</th>
+<th class="bg-primary">Description</th>
+<th class="bg-primary">Detail</th>
+<th class="bg-primary">Edit</th>
+</tr>
+
+{% for course in courses %}
+
+<tr>
+<td class="bg-danger">{{course.name}}</td>
+<td class="bg-danger">{{course.duration_in_month}}</td>
+<td class="bg-success">{{course.description}}</td>
+<td class="bg-warning">
+  <a href="/course/view/{{course.pk}}/">view more</a>
+</td>
+<td class="bg-warning">
+  <a href="/course/edit/{{course.pk}}/">Edit</a>
+</td>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
