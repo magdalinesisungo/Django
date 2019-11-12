@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-4fwel&^%&350(ebjjmbqlj-0o2%6+)*!#&i%m5r4%6p8$cgo2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'course',
     'api',
     'rest_framework',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# MEDIA_ROOT
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = "/"
 
 django_heroku.settings(locals())

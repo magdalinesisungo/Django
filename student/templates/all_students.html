@@ -12,7 +12,7 @@
 <!-- 
 <div class="container"> -->
   <h2>Student List</h2>
-  <button><a href=""/student/add/"></a></button>        
+  <button><a href=""/student/add/"></a></button>       
   <table class="table table-striped">
     <thead>
 <tr>
@@ -24,7 +24,9 @@
 <th class="bg-primary">Edit</th>
 </tr>
 
+
 {% for student in students %}
+
 <tr>
 <td class="bg-danger">{{student.first_name}}</td>
 <td class="bg-danger">{{student.last_name}}</td>
